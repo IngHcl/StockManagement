@@ -12,11 +12,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author shiva
  *
  */
 @Entity
+@Setter
+@Getter
 public class PurchaseStock {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -103,6 +108,11 @@ public class PurchaseStock {
 		this.stockId = stockId;
 		this.purchsedDate = purchsedDate;
 		this.brokerageAmount = brokerageAmount;
+	}
+
+	public PurchaseStock() {
+		super();
+
 	}
 
 }
