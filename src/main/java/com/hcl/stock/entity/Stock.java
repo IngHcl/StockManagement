@@ -10,11 +10,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author User1
  *
  */
 @Entity
+@Setter
+@Getter
 public class Stock {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,51 +28,5 @@ public class Stock {
 	private Double stockPrice;
 	private Integer stockQuantity;
 	private String stockDescription;
-
-	public String getStockName() {
-		return stockName;
-	}
-
-	public void setStockName(String stockName) {
-		this.stockName = stockName;
-	}
-
-	public Double getStockPrice() {
-		return stockPrice;
-	}
-
-	public void setStockPrice(Double stockPrice) {
-		this.stockPrice = stockPrice;
-	}
-
-	public Integer getStockQuantity() {
-		return stockQuantity;
-	}
-
-	public void setStockQuantity(Integer stockQuantity) {
-		this.stockQuantity = stockQuantity;
-	}
-
-	public String getStockDescription() {
-		return stockDescription;
-	}
-
-	public void setStockDescription(String stockDescription) {
-		this.stockDescription = stockDescription;
-	}
-
-	/**
-	 * @param stockName
-	 * @param stockPrice
-	 * @param stockQuantity
-	 * @param stockDescription
-	 */
-	public Stock(String stockName, Double stockPrice, Integer stockQuantity, String stockDescription) {
-		super();
-		this.stockName = stockName;
-		this.stockPrice = stockPrice;
-		this.stockQuantity = stockQuantity;
-		this.stockDescription = stockDescription;
-	}
 
 }
