@@ -13,7 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * @author User1
+ * @author shiva
  *
  */
 @Entity
@@ -23,7 +23,7 @@ public class PurchaseStock {
 	private Integer purchaseStockId;
 	private Integer userId;
 	private Double purchasePrice;
-	private Integer quantity;
+	private Integer stockQuantity;
 	private Integer stockId;
 	private LocalDate purchsedDate;
 	private Double brokerageAmount;
@@ -52,12 +52,12 @@ public class PurchaseStock {
 		this.purchasePrice = purchasePrice;
 	}
 
-	public Integer getQuantity() {
-		return quantity;
+	public Integer getStockQuantity() {
+		return stockQuantity;
 	}
 
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
+	public void setStockQuantity(Integer stockQuantity) {
+		this.stockQuantity = stockQuantity;
 	}
 
 	public Integer getStockId() {
@@ -85,19 +85,21 @@ public class PurchaseStock {
 	}
 
 	/**
+	 * @param purchaseStockId
 	 * @param userId
 	 * @param purchasePrice
-	 * @param quantity
+	 * @param stockQuantity
 	 * @param stockId
 	 * @param purchsedDate
 	 * @param brokerageAmount
 	 */
-	public PurchaseStock(Integer userId, Double purchasePrice, Integer quantity, Integer stockId,
-			LocalDate purchsedDate, Double brokerageAmount) {
+	public PurchaseStock(Integer purchaseStockId, Integer userId, Double purchasePrice, Integer stockQuantity,
+			Integer stockId, LocalDate purchsedDate, Double brokerageAmount) {
 		super();
+		this.purchaseStockId = purchaseStockId;
 		this.userId = userId;
 		this.purchasePrice = purchasePrice;
-		this.quantity = quantity;
+		this.stockQuantity = stockQuantity;
 		this.stockId = stockId;
 		this.purchsedDate = purchsedDate;
 		this.brokerageAmount = brokerageAmount;

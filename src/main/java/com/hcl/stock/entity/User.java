@@ -79,4 +79,8 @@ public class User {
 		this.mobileNo = mobileNo;
 	}
 
+	public User() {
+		super();
+	}
+
 }

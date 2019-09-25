@@ -62,12 +62,34 @@ public class Stock {
 	 * @param stockQuantity
 	 * @param stockDescription
 	 */
-	public Stock(String stockName, Double stockPrice, Integer stockQuantity, String stockDescription) {
+
+	public Integer getStockId() {
+		return stockId;
+	}
+
+	public void setStockId(Integer stockId) {
+		this.stockId = stockId;
+	}
+
+	/**
+	 * @param stockId
+	 * @param stockName
+	 * @param stockPrice
+	 * @param stockQuantity
+	 * @param stockDescription
+	 */
+	public Stock(Integer stockId, String stockName, Double stockPrice, Integer stockQuantity, String stockDescription) {
 		super();
+		this.stockId = stockId;
 		this.stockName = stockName;
 		this.stockPrice = stockPrice;
 		this.stockQuantity = stockQuantity;
 		this.stockDescription = stockDescription;
+	}
+
+	public Stock() {
+		super();
+
 	}
 
 }
