@@ -23,6 +23,10 @@ public class Stock {
 	private Double stockPrice;
 	private Integer stockQuantity;
 	private String stockDescription;
+	
+	public Stock() {
+		
+	}
 
 	public String getStockName() {
 		return stockName;
@@ -54,6 +58,14 @@ public class Stock {
 
 	public void setStockDescription(String stockDescription) {
 		this.stockDescription = stockDescription;
+	}
+	
+	public Integer getStockId() {
+		return stockId;
+	}
+
+	public void setStockId(Integer stockId) {
+		this.stockId = stockId;
 	}
 
 	/**

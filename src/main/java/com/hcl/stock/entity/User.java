@@ -24,6 +24,10 @@ public class User {
 	private String password;
 	private String userEmail;
 	private Long mobileNo;
+	
+	public User() {
+		
+	}
 
 	public Integer getUserId() {
 		return userId;
