@@ -1,8 +1,3 @@
-/**
- * @author User1
- * @name Stock.java
- * @date Sep 25, 2019
- */
 package com.hcl.stock.entity;
 
 import javax.persistence.Entity;
@@ -10,11 +5,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author User1
  *
  */
 @Entity
+@Setter
+@Getter
 public class Stock {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,9 +23,9 @@ public class Stock {
 	private Double stockPrice;
 	private Integer stockQuantity;
 	private String stockDescription;
-	
+
 	public Stock() {
-		
+
 	}
 
 	public String getStockName() {
@@ -59,7 +59,7 @@ public class Stock {
 	public void setStockDescription(String stockDescription) {
 		this.stockDescription = stockDescription;
 	}
-	
+
 	public Integer getStockId() {
 		return stockId;
 	}
@@ -69,13 +69,15 @@ public class Stock {
 	}
 
 	/**
+	 * @param stockId
 	 * @param stockName
 	 * @param stockPrice
 	 * @param stockQuantity
 	 * @param stockDescription
 	 */
-	public Stock(String stockName, Double stockPrice, Integer stockQuantity, String stockDescription) {
+	public Stock(Integer stockId, String stockName, Double stockPrice, Integer stockQuantity, String stockDescription) {
 		super();
+		this.stockId = stockId;
 		this.stockName = stockName;
 		this.stockPrice = stockPrice;
 		this.stockQuantity = stockQuantity;

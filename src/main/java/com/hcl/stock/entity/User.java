@@ -10,11 +10,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author User1
  *
  */
 @Entity
+@Setter
+@Getter
 public class User {
 
 	@Id
@@ -83,4 +88,5 @@ public class User {
 		this.mobileNo = mobileNo;
 	}
 
+	
 }

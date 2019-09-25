@@ -1,8 +1,3 @@
-/**
- * @author User1
- * @name PurchaseStock.java
- * @date Sep 25, 2019
- */
 package com.hcl.stock.entity;
 
 import java.time.LocalDate;
@@ -12,11 +7,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
- * @author User1
+ * @author shiva
  *
  */
 @Entity
+@Setter
+@Getter
 public class PurchaseStock {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -89,16 +89,19 @@ public class PurchaseStock {
 	}
 
 	/**
+	 * @param purchaseStockId
 	 * @param userId
 	 * @param purchasePrice
-	 * @param quantity
+	 * @param stockQuantity
 	 * @param stockId
 	 * @param purchsedDate
 	 * @param brokerageAmount
 	 */
-	public PurchaseStock(Integer userId, Double purchasePrice, Integer stockQuantity, Integer stockId,
-			LocalDate purchsedDate, Double brokerageAmount) {
+	
+	public PurchaseStock(Integer purchaseStockId, Integer userId, Double purchasePrice, Integer stockQuantity,
+			Integer stockId, LocalDate purchsedDate, Double brokerageAmount) {
 		super();
+		this.purchaseStockId = purchaseStockId;
 		this.userId = userId;
 		this.purchasePrice = purchasePrice;
 		this.stockQuantity = stockQuantity;
@@ -107,4 +110,5 @@ public class PurchaseStock {
 		this.brokerageAmount = brokerageAmount;
 	}
 
+	
 }
