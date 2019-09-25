@@ -79,6 +79,8 @@ public class StockBuyServiceImplTest {
 
 		ResponseDto actual = stockBuyServiceImpl.buyStock(stockBuyInput);
 		Assert.assertEquals(HttpStatus.CREATED.value(), actual.getStatusCode().intValue());
+		Assert.assertEquals(HttpStatus.CREATED.value(), actual.getStatusCode().intValue());
+
 	}
 
 	@Test(expected = StockManagementException.class)
