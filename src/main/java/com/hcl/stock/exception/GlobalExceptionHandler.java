@@ -24,12 +24,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 	}
 	
 	@ExceptionHandler(HttpStatusCodeException.class)
-	public ResponseEntity<ResponseDto> lmsExceptionHandler(HttpStatusCodeException ex, WebRequest request) {
+	public ResponseEntity<String> lmsExceptionHandler(HttpStatusCodeException ex, WebRequest request) {
 
-		ResponseDto responseDto = new ResponseDto();
-		responseDto.setMessage(ex.getMessage());
-		responseDto.setStatusCode(601);
-		return new ResponseEntity<>(responseDto, HttpStatus.UNAUTHORIZED);
+		return ResponseEntity.status(ex.getRawStatusCode()).body(ex.getResponseBodyAsString());
 
 	}
 
