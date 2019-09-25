@@ -60,4 +60,9 @@ public class LoginResponseDTO implements Serializable {
 		this.userName = userName;
 	}
 
+	public LoginResponseDTO() {
+		super();
+
+	}
+
 }
